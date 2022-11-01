@@ -55,41 +55,41 @@
           Name: vprofile-pubsub3
       register: pubsub3_out
 
-    - name: create Public Subnet 4 in Zone4
+    - name: create Private Subnet 1 in Zone1
       ec2_vpc_subnet:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{ region }}"
-        az: "{{ zone4 }}"
+        az: "{{ zone1 }}"
         state: "{{state}}"
-        cidr: "{{ PubSub4Cidr }}"
+        cidr: "{{ PrivSub1Cidr }}"
         map_public: yes
         resource_tags:
-          Name: vprofile-pubsub4
-      register: pubsub4_out
+          Name: vprofile-privsub1
+      register: privsub1_out
 
-    - name: create Public Subnet 5 in Zone5
+    - name: create Private Subnet 2 in Zone2
       ec2_vpc_subnet:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{ region }}"
-        az: "{{ zone5 }}"
+        az: "{{ zone2 }}"
         state: "{{state}}"
-        cidr: "{{ PubSub5Cidr }}"
+        cidr: "{{ PrivSub2Cidr }}"
         map_public: yes
         resource_tags:
-          Name: vprofile-pubsub4
-      register: pubsub5_out
+          Name: vprofile-privsub2
+      register: privsub2_out
 
-    - name: create Public Subnet 6 in Zone6
+    - name: create Private Subnet 3 in Zone3
       ec2_vpc_subnet:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{ region }}"
-        az: "{{ zone6 }}"
+        az: "{{ zone3 }}"
         state: "{{state}}"
-        cidr: "{{ PubSub6Cidr }}"
+        cidr: "{{ PrivSub3Cidr }}"
         map_public: yes
         resource_tags:
-          Name: vprofile-pubsub6
-      register: pubsub6_out
+          Name: vprofile-privsub3
+      register: privsub3_out
 
 
     
