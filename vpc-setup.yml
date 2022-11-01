@@ -29,4 +29,6 @@
         map_public: yes
         resource_tags:
           Name: vprofile-pubsub1
-        register: pubsub1_out
+      register: pubsub1_out
+      
+
