@@ -119,7 +119,7 @@
         wait: yes
         region: "{{ region }}"
         if_exist_do_not_create: true
-      register: NATG_out
+      register: NATGW_out
 
     - name: Set up Private subnet route table
       ec2_vpc_route_table:
