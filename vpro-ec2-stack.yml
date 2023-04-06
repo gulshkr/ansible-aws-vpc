@@ -191,7 +191,7 @@
         listeners:
           - protocol: http # options are http, https, ssl, tcp
             load_balancer_port: 80
-            instance_part: 80
+            instance_port: 80
 
     - name: Insert/Update Hosts IP & Name in file provision-stack/group_vars/hostsip
       blockinfile:
