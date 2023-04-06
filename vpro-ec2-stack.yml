@@ -206,7 +206,7 @@
     - name: Copy login key to provision_stack directory
       copy: 
         src: loginkey_vpro.pem
-        dest: provision_stack/loginkey_vpro.pem
+        dest: provision-stack/loginkey_vpro.pem
         mode: '0400'
     
     - name: Insert/Update Inventory file proviion-stack/inventory-vpro
