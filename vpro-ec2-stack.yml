@@ -209,7 +209,7 @@
         dest: provision-stack/loginkey_vpro.pem
         mode: '0400'
     
-    - name: Insert/Update Inventory file proviion-stack/inventory-vpro
+    - name: Insert/Update Inventory file provision-stack/inventory-vpro
       blockinfile:
         path: provision-stack/inventory-vpro
         block: |
