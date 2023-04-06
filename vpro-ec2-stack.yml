@@ -244,10 +244,10 @@
           rmqsrvgrp
           mcsrvgrp
           dbsrvgrp
-
-          [stack_int:vars]
+          
+          [stack_inst:vars]
           ansible_user=ubuntu
           ansible_ssh_private_key_file=loginkey_vpro.pem
-          #ansible_pyhton_interpreter=/usr/bin/python3
+          #ansible_python_interpreter=/usr/bin/python3
 
     
