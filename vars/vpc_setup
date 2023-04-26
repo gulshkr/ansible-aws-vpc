@@ -1,15 +1,15 @@
 vpc_name: "Vprofile-vpc"
 
 # VPC Range
-vpcCidr: '172.20.0.0/16'
+vpcCidr: '172.31.0.0/16'
 
 # Subnets Range
-PubSub1Cidr: 172.20.1.0/24
-PubSub2Cidr: 172.20.2.0/24
-PubSub3Cidr: 172.20.3.0/24
-PrivSub1Cidr: 172.20.4.0/24
-PrivSub2Cidr: 172.20.5.0/24
-PrivSub3Cidr: 172.20.6.0/24
+PubSub1Cidr: 172.31.1.0/24
+PubSub2Cidr: 172.31.2.0/24
+PubSub3Cidr: 172.31.3.0/24
+PrivSub1Cidr: 172.31.4.0/24
+PrivSub2Cidr: 172.31.5.0/24
+PrivSub3Cidr: 172.31.6.0/24
 
 # Region Name
 region: "us-east-2"
@@ -23,4 +23,4 @@ state: present
 
 # Bastion vars
 bastion_ami: ami-089a545a9ed9893b6
-MYIP:  27.7.218.176/32
+MYIP:  27.6.245.73/32
