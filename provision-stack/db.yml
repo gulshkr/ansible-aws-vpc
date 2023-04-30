@@ -20,7 +20,7 @@
         - package
     
     - name: Start and enable mysql service
-      services: 
+      service: 
         name: mysql
         state: started
         enabled: yes
