@@ -1,6 +1,7 @@
 ---
 - name: Install Memcache, Start & enable SVC
   hosts: mcsrvgrp
+  become: true
   gather_facts: no
   tasks:
     - name: Install Memcache
