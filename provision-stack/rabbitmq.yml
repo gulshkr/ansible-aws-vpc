@@ -10,7 +10,6 @@
         - package
 
     - name: Add an Erlang Solution public Key
-      become: true
       apt_key:
         url: https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
         state: present
@@ -27,23 +26,17 @@
         - package
 
     - name: Add an Apt signing key, uses whichever key is at the URL
-      become: true
       apt_key:
         url: https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc
         state: present
       tags:
         - package
 
-    - name: Add RabbitMQ repository
-      apt_repository:
-        repo: deb http://www.rabbitmq.com/debian/ testing main
-        update_cache: yes
+    - apt_repository:
+        repo: deb https://dl.bintray.com/rabbitmq/debian bionic main
         state: present
-        filename: rabbitmq.list
-      become: true
       tags:
         - package
-
 
     - name: Install Rabbit MQ
       apt:
