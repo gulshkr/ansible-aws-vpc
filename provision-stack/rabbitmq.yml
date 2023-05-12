@@ -1,8 +1,7 @@
 ---
 - name: Install & Setup RabbitMQ with user
   hosts: rmqsrvgrp
-  become: true
-  gather_facts: no 
+  gather_facts: no
   tasks:
     - name: Install Erlang Repository Package
       apt:
@@ -10,15 +9,15 @@
       tags:
         - package
 
-    - name: Add an Erlang Solution Key
-      apt_key: 
+    - name: Add an Erlang Solution public Key
+      apt_key:
         url: https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
         state: present
       tags:
         - package
-      
+
     - name: Install Erlang
-      apt: 
+      apt:
         name: erlang
         update_cache: yes
         cache_valid_time: 86400
@@ -32,30 +31,30 @@
         state: present
       tags:
         - package
-    
+
     - apt_repository:
         repo: deb https://dl.bintray.com/rabbitmq/debian bionic main
         state: present
       tags:
         - package
-    
+
     - name: Install Rabbit MQ
-      apt: 
+      apt:
         name: rabbitmq-server
         state: present
         update_cache: yes
-      tags: 
+      tags:
         - package
-    
+
 
     - name: Start & Enable RMQ
-      service: 
+      service:
         name: rabbitmq-server
         state: started
         enabled: yes
       tags:
         - svc
-    
+
     - name: Config setup
       copy:
         content: |
@@ -66,7 +65,7 @@
       tags:
         - conf
 
-    
+
     - rabbitmq_user:
         user: test
         password: test
@@ -80,18 +79,18 @@
       tags:
         - conf
 
-    
+
     - name: Enables the rabbitmq_management plugin
       rabbitmq_plugin:
         names: rabbitmq_management
         state: enabled
-      notify: 
+      notify:
         - Restart RMQ
       tags:
         - package
-  
-  handlers: 
+
+  handlers:
     - name: Restart RMQ
-      service: 
+      service:
         name: rabbitmq-server
         state: restarted
