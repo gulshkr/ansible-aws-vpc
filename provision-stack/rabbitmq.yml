@@ -29,13 +29,10 @@
     - name: Add an Apt signing key, uses whichever key is at the URL
       become: true
       apt_key:
-        keyserver: keyserver.ubuntu.com
-        id: "0x6B73A36E6026DFCA"
+        url: https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc
         state: present
-        keyring: /etc/apt/trusted.gpg.d/
       tags:
         - package
-
 
     - apt_repository:
         repo: deb https://dl.bintray.com/rabbitmq/debian bionic main
