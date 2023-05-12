@@ -34,12 +34,18 @@
       tags:
         - package
 
-    - apt_repository:
-        repo: deb https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu/ bionic main
-        state: present
-      become: true
-      tags:
-        - package
+    - name: Add RabbitMQ repository
+  apt_repository:
+    repo: deb http://www.rabbitmq.com/debian/ testing main
+    update_cache: yes
+    state: present
+    filename: rabbitmq.list
+    key_id: 6B73A36E6026DFCA
+    keyserver: keyserver.ubuntu.com
+  become: true
+  tags:
+    - package
+
 
     - name: Install Rabbit MQ
       apt:
