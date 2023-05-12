@@ -10,6 +10,7 @@
         - package
 
     - name: Add an Erlang Solution public Key
+      become: true
       apt_key:
         url: https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
         state: present
