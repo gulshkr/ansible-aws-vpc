@@ -36,7 +36,7 @@
         state: present
 
     
-    - name: Creating accounts DB
+    - name: Creating accounts DB 
       mysql_db:
         name: "{{dbname}}"
         state: present
