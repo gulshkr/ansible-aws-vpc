@@ -46,7 +46,7 @@
         dest: files/db_backup.sql
 
 
-        #     - name: Coy artifacts to files directory
+        #     - name: Copy artifacts to files directory
         #command: "cp Vprofile-repo/target/vprofile-v2.war file/"
 
 
