@@ -1,4 +1,5 @@
-# workflow for repo 2
+# repo2-workflow.yml
+
 name: Repo 2 Workflow
 
 on:
@@ -6,11 +7,20 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:
 
 jobs:
-  build:
+  trigger-common-workflow:
     runs-on: ubuntu-latest
 
-    extends:
-      - .github/workflows/build.yml
+    steps:
+      - name: Trigger Common Workflow
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const response = await github.repos.createDispatchEvent({
+              owner: 'gulshkr',
+              repo: 'common-workflow',
+              event_type: 'trigger-common-workflow',
+            });
+            console.log(response.data);
