@@ -22,5 +22,8 @@ jobs:
               owner: 'gulshkr',
               repo: 'common-workflow',
               event_type: 'trigger-common-workflow',
+              client_payload: {
+                workflow: 'build.yml'
+              }
             });
             console.log(response.data);
