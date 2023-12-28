@@ -6,7 +6,11 @@ pubsub3id: subnet-0168d8c4d32aa4e83
 privsub1id: subnet-0d402a0734aa84b5c
 privsub2id: subnet-0950a2273a097b55e
 privsub3id: subnet-0bb327e46154c5462
-igwid: igw-0e25da3adc967b929
-pubRTid: rtb-078c3e412ef92231c
-NATGWid: nat-073655de76def6002
-privRTid: rtb-067aa8f349b15e26f
+igwid: igw-00bfa06eb730828f5
+pubRTid: rtb-06ee7c93864224360
+NATGWid: nat-013be9f8843c36f2a
+privRTid: rtb-0e1f5face90a2a1ea
+BastionSGid: 
+# BEGIN ANSIBLE MANAGED BLOCK
+BastionSGid: sg-06a9032fa36f1fd9e
+# END ANSIBLE MANAGED BLOCK
